@@ -1,14 +1,20 @@
-title: Project title in sentence case
 hero_image: images/banner.png
-description: A short description of the project
+description: Create a playful drag-and-drop word magnet board with editable word sets.
 listed: false
 pdf: false
+title: 'Word Magnet Studio'
+landing: true
 steps:
-  - title: What you will make
-  - title: Step title
+  - title: 'Build the magnet board'
+  - title: 'Style the dream scene'
+  - title: 'Make word magnets'
     completion:
-      - engaged      
-  - title: Challenge
+      - 'engaged'
+  - title: 'Drag and change words'
+    completion:
+      - 'internal'
+  - title: 'Choose and add words'
+    completion:
+      - 'external'
+  - title: 'Challenge'
     challenge: true
-    completion:
-      - external

@@ -1,0 +1,197 @@
+/* The board is a fixed scene so the word magnets feel like fridge poetry. */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #17202a;
+  background: #f5f0e6;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.toolbar {
+  display: grid;
+  gap: 0.55rem;
+  padding: 0.75rem;
+  background: #f8d96f;
+  border-bottom: 3px solid #17202a;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.35rem, 6vw, 2.1rem);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.control-row,
+.word-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+label {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+select,
+input,
+.toolbar button {
+  min-height: 2.35rem;
+  border: 2px solid #17202a;
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+select,
+input {
+  padding: 0.35rem 0.5rem;
+}
+
+input {
+  width: min(12rem, 52vw);
+}
+
+.toolbar button {
+  padding: 0.35rem 0.65rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #17202a;
+}
+
+.toolbar button:hover,
+.toolbar button:focus-visible,
+.magnet:hover,
+.magnet:focus-visible {
+  background: #c7f5e8;
+  outline: 3px solid #f06595;
+  outline-offset: 2px;
+}
+
+.board {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, #20314f 0%, #435f74 42%, #f28c58 43%, #f8d96f 48%, #185c64 49%, #102f3a 100%);
+  touch-action: none;
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.moon {
+  position: absolute;
+  width: 4.5rem;
+  height: 4.5rem;
+  top: 3.5rem;
+  right: 3rem;
+  border-radius: 50%;
+  background: #fff6c7;
+  box-shadow: -0.7rem 0.4rem 0 #f28c58;
+}
+
+.skyline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 18%;
+  height: 26%;
+  background:
+    linear-gradient(to top, #17202a 0 100%),
+    linear-gradient(to top, transparent 0 100%);
+  clip-path: polygon(
+    0 100%, 0 52%, 8% 52%, 8% 36%, 15% 36%, 15% 64%,
+    23% 64%, 23% 28%, 31% 28%, 31% 60%, 39% 60%, 39% 42%,
+    47% 42%, 47% 70%, 56% 70%, 56% 32%, 64% 32%, 64% 58%,
+    72% 58%, 72% 40%, 81% 40%, 81% 66%, 90% 66%, 90% 48%,
+    100% 48%, 100% 100%
+  );
+}
+
+.road {
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  bottom: -9%;
+  height: 32%;
+  background: #293241;
+  transform: perspective(12rem) rotateX(58deg);
+  border-left: 0.35rem solid #f5f0e6;
+  border-right: 0.35rem solid #f5f0e6;
+}
+
+.message-zone {
+  position: absolute;
+  inset: 21% 16% 24%;
+  border: 2px dashed rgba(255, 255, 255, 0.75);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.magnet-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.magnet {
+  position: absolute;
+  min-width: 2.4rem;
+  max-width: 7.5rem;
+  min-height: 1.55rem;
+  padding: 0.12rem 0.45rem;
+  border: 2px solid #17202a;
+  border-radius: 3px;
+  background: #ffffff;
+  color: #17202a;
+  box-shadow: 2px 2px 0 rgba(23, 32, 42, 0.85);
+  cursor: grab;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0;
+  text-align: center;
+  user-select: none;
+  touch-action: none;
+}
+
+.magnet.dragging {
+  cursor: grabbing;
+  z-index: 10;
+  background: #f8d96f;
+  box-shadow: 4px 4px 0 rgba(23, 32, 42, 0.85);
+}
+
+@media (min-width: 720px) {
+  .toolbar {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+
+  .word-form {
+    justify-content: end;
+  }
+}

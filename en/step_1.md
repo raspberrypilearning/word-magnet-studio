@@ -1,45 +1,56 @@
-## What you will make
-OR
-## What you will do - change meta if you use this
+<h2 class="c-project-heading--task">Build the magnet board</h2>
 
-A brief description - one or two sentences. 
+Create the web page that will hold your word magnets and controls.
 
---- print-only ---
+Open `index.html` and replace the starter code with this page structure.
 
-![ALT TEXT](images/IMAGE.png)
+<div class="c-project-code">
 
---- /print-only ---
+--- code ---
+---
+language: html
+filename: index.html
+line_numbers: true
+line_number_start: 1
+line_highlights: 10-29
+---
+<!-- The page holds the controls and the board where magnets can move. -->
+<main class="app">
+  <header class="toolbar" aria-label="Word magnet controls">
+    <h1>Word Magnet Studio</h1>
 
---- no-print ---
+    <nav class="control-row">
+      <label for="bank-select">Word set</label>
+      <select id="bank-select"></select>
+      <button id="shuffle-button" type="button">Shuffle edge</button>
+      <button id="reset-button" type="button">Reset tiles</button>
+    </nav>
 
-[Editor embed](https://editor.raspberrypi.org/en/embed/viewer/project-slug)
+    <form id="word-form" class="word-form">
+      <label for="new-word">Add word</label>
+      <input id="new-word" name="new-word" maxlength="18" autocomplete="off" placeholder="moonlit">
+      <button type="submit">Add</button>
+    </form>
+  </header>
 
---- /no-print ---
+  <section id="board" class="board" aria-label="Dream city word magnet board">
+    <section class="scene" aria-hidden="true">
+      <span class="moon"></span>
+      <span class="skyline"></span>
+      <span class="road"></span>
+    </section>
+    <section class="message-zone" aria-hidden="true"></section>
+    <section id="magnet-layer" class="magnet-layer"></section>
+  </section>
+</main>
+--- /code ---
 
---- no-print ---
-
-Video embed
-
-<video width="640" height="360" controls>
-<source src="images/videoname.mp4" type="video/mp4">
-</video>
-
-Youtube embed 
-<html>
-<div style="position: relative; overflow: hidden; padding-top: 56.25%;">
-<iframe style="position: absolute; top: 0; left: 0; right: 0; width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/XXXXXXXXX?rel=0&cc_load_policy=1" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
-</iframe>
-</div><br>
-</html>
-
-Scratch embed
-<div class="scratch-preview">
- <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/XXXXXXXXX/?autostart=false" frameborder="0"></iframe>
 </div>
 
---- /no-print ---
+<h2 class="c-project-heading--task">Test</h2>
 
-### You will need:
-- a
-- b
-- c
+Run your project and check that the title, controls, and empty board appear.
+
+<div class="c-project-output">
+  <img src="images/step_1_output.png" alt="Observed project output after this step.">
+</div>

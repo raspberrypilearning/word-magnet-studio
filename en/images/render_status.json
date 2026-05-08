@@ -1,0 +1,47 @@
+{
+  "attempted": true,
+  "failed_steps": [],
+  "generated_steps": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "renderer": "swift-webkit",
+  "skipped_steps": [],
+  "steps": {
+    "1": {
+      "output": "images/step_1_output.png",
+      "status": "generated",
+      "target": "file:///Volumes/Crucial%20X9/GitHub/ProjectShaper/word-magnet-studio/en/code/word-magnet-studio-complete/index.html"
+    },
+    "2": {
+      "output": "images/step_2_output.png",
+      "status": "generated",
+      "target": "file:///Volumes/Crucial%20X9/GitHub/ProjectShaper/word-magnet-studio/en/code/word-magnet-studio-complete/index.html"
+    },
+    "3": {
+      "output": "images/step_3_output.png",
+      "status": "generated",
+      "target": "file:///Volumes/Crucial%20X9/GitHub/ProjectShaper/word-magnet-studio/en/code/word-magnet-studio-complete/index.html"
+    },
+    "4": {
+      "output": "images/step_4_output.png",
+      "status": "generated",
+      "target": "file:///Volumes/Crucial%20X9/GitHub/ProjectShaper/word-magnet-studio/en/code/word-magnet-studio-complete/index.html"
+    },
+    "5": {
+      "output": "images/step_5_output.png",
+      "status": "generated",
+      "target": "file:///Volumes/Crucial%20X9/GitHub/ProjectShaper/word-magnet-studio/en/code/word-magnet-studio-complete/index.html"
+    },
+    "6": {
+      "output": "images/step_6_output.png",
+      "status": "generated",
+      "target": "file:///Volumes/Crucial%20X9/GitHub/ProjectShaper/word-magnet-studio/en/code/word-magnet-studio-complete/index.html"
+    }
+  },
+  "toolchain_available": true
+}
