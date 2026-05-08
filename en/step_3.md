@@ -1,77 +1,64 @@
-<h2 class="c-project-heading--task">Make word magnets</h2>
+<h2 class="c-project-heading--task">Challenge</h2>
 
-Use word sets and edge positions to create buttons around the board.
+Add a form so someone can put one of their own words onto a tile.
 
-Open `script.js` and add the word banks, board positions, and setup functions.
+## Step 1
+Add a form to `index.html`. 
 
 <div class="c-project-code">
+
+--- code ---
+---
+language: html
+filename: index.html
+line_numbers: true
+line_number_start: 18
+line_highlights: 1-5
+---
+<form id="word-form" class="word-form">
+  <label for="new-word">Add word</label>
+  <input id="new-word" name="new-word" maxlength="18" autocomplete="off" placeholder="moonlit">
+  <button type="submit">Add</button>
+</form>
+--- /code ---
+
+## Step 2
+Connect the form in `script.js`.
 
 --- code ---
 ---
 language: javascript
 filename: script.js
 line_numbers: true
-line_number_start: 1
-line_highlights: 1-38
+line_number_start: 130
+line_highlights: 1-19
 ---
-// Word banks keep the project easy to retheme.
-const wordBanks = {
-  "Story spark": ["I", "you", "we", "make", "found", "lost", "dream", "strange"],
-  "Neon city": ["neon", "street", "arcade", "bus", "tower", "window", "paint", "signal"],
-  "Space quest": ["orbit", "star", "rocket", "moon", "planet", "comet", "galaxy", "alien"],
-  "Mystery mood": ["quiet", "hidden", "wild", "hopeful", "brave", "gentle", "storm", "wonder"]
-};
-
-const edgeSpots = [
-  { x: 3, y: 4 }, { x: 27, y: 4 }, { x: 51, y: 4 }, { right: 3, y: 4 },
-  { x: 3, y: 14 }, { x: 3, y: 24 }, { x: 3, y: 34 }, { x: 3, y: 44 },
-  { right: 3, y: 44 }, { right: 3, y: 34 }, { right: 3, y: 24 }, { right: 3, y: 14 },
-  { x: 3, y: 94 }, { x: 27, y: 94 }, { x: 51, y: 94 }, { right: 3, y: 94 }
-];
-
-const board = document.querySelector("#board");
-const magnetLayer = document.querySelector("#magnet-layer");
-const bankSelect = document.querySelector("#bank-select");
-const shuffleButton = document.querySelector("#shuffle-button");
-const resetButton = document.querySelector("#reset-button");
 const wordForm = document.querySelector("#word-form");
 const newWordInput = document.querySelector("#new-word");
 
-let currentBank = Object.keys(wordBanks)[0];
-let magnets = [];
+wordForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const newWord = newWordInput.value.trim().replace(/\s+/g, " ");
 
-function randomWord() {
-  const words = wordBanks[currentBank];
-  return words[Math.floor(Math.random() * words.length)];
-}
-
-function placeMagnet(magnet, spot) {
-  if (spot.right !== undefined) {
-    magnet.style.right = `${spot.right}%`;
-  } else {
-    magnet.style.left = `${spot.x}%`;
+  if (newWord === "") {
+    return;
   }
-  magnet.style.top = `${spot.y}%`;
-}
 
-function makeMagnet(spot) {
-  const magnet = document.createElement("button");
-  magnet.type = "button";
-  magnet.className = "magnet";
-  magnet.textContent = randomWord();
-  placeMagnet(magnet, spot);
-  magnetLayer.append(magnet);
-  magnets.push(magnet);
-}
+  if (!words.includes(newWord)) {
+    words.push(newWord);
+  }
 
-edgeSpots.forEach(makeMagnet);
+  const magnet = magnets[Math.floor(Math.random() * magnets.length)];
+  magnet.textContent = newWord;
+  newWordInput.value = "";
+});
 --- /code ---
 
 </div>
 
 <h2 class="c-project-heading--task">Test</h2>
 
-Run your project and check that word buttons appear around the edge of the board.
+Type a word into the box, click Add, and check that your word appears on a tile.
 
 <div class="c-project-output">
   <img src="images/step_3_output.png" alt="Observed project output after this step.">

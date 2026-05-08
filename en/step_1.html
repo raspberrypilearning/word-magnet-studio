@@ -2,27 +2,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Word Magnet Studio</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Word Magnet Studio step 1</title>
+  <link rel="stylesheet" href="../en/code/word-magnet-studio-complete/style.css">
 </head>
 <body>
-  <!-- The page starts with a ready-made word board and a few controls. -->
   <main class="app">
     <header class="toolbar" aria-label="Word magnet controls">
       <h1>Word Magnet Studio</h1>
-
       <nav class="control-row">
         <button id="shuffle-button" type="button">Shuffle edge</button>
-        <button id="reset-button" type="button">Reset tiles</button>
+        <button id="reset-button" type="button" hidden>Reset tiles</button>
       </nav>
-
-      <form id="word-form" class="word-form">
+      <form id="word-form" class="word-form" hidden>
         <label for="new-word">Add word</label>
         <input id="new-word" name="new-word" maxlength="18" autocomplete="off" placeholder="moonlit">
         <button type="submit">Add</button>
       </form>
     </header>
-
     <section id="board" class="board" aria-label="Dream city word magnet board">
       <section class="scene" aria-hidden="true">
         <span class="moon"></span>
@@ -33,7 +29,6 @@
       <section id="magnet-layer" class="magnet-layer"></section>
     </section>
   </main>
-
-  <script src="script.js"></script>
+  <script src="../en/code/word-magnet-studio-complete/script.js"></script>
 </body>
 </html>

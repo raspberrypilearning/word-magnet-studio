@@ -1,8 +1,14 @@
-<h2 class="c-project-heading--task">Build the magnet board</h2>
+<h2 class="c-project-heading--task">Add a shuffle button</h2>
 
-Create the web page that will hold your word magnets and controls.
+Create a button that changes every word magnet at once.
 
-Open `index.html` and replace the starter code with this page structure.
+<h2 class="c-project-heading--explainer">Make this change</h2>
+
+## Step 1
+Run the code to see the unstyled page.
+
+## Step 2
+Add a controls area with a `Shuffle edge` button below the title in `index.html`.
 
 <div class="c-project-code">
 
@@ -11,45 +17,45 @@ Open `index.html` and replace the starter code with this page structure.
 language: html
 filename: index.html
 line_numbers: true
-line_number_start: 1
-line_highlights: 10-29
+line_number_start: 10
+line_highlights: 4-7
 ---
-<!-- The page holds the controls and the board where magnets can move. -->
 <main class="app">
   <header class="toolbar" aria-label="Word magnet controls">
     <h1>Word Magnet Studio</h1>
-
+    <!-- Add the controls area below the title. -->
     <nav class="control-row">
-      <label for="bank-select">Word set</label>
-      <select id="bank-select"></select>
       <button id="shuffle-button" type="button">Shuffle edge</button>
-      <button id="reset-button" type="button">Reset tiles</button>
     </nav>
-
-    <form id="word-form" class="word-form">
-      <label for="new-word">Add word</label>
-      <input id="new-word" name="new-word" maxlength="18" autocomplete="off" placeholder="moonlit">
-      <button type="submit">Add</button>
-    </form>
   </header>
+--- /code ---
 
-  <section id="board" class="board" aria-label="Dream city word magnet board">
-    <section class="scene" aria-hidden="true">
-      <span class="moon"></span>
-      <span class="skyline"></span>
-      <span class="road"></span>
-    </section>
-    <section class="message-zone" aria-hidden="true"></section>
-    <section id="magnet-layer" class="magnet-layer"></section>
-  </section>
-</main>
+## Step 3
+Add the code that runs the `randomiseMagnet` function runs when a magnet button is pressed.
+
+--- code ---
+---
+language: javascript
+filename: script.js
+line_numbers: true
+line_number_start: 113
+line_highlights: 1-8
+---
+// This button changes every magnet at once.
+const shuffleButton = document.querySelector("#shuffle-button");
+
+function shuffleWords() {
+  magnets.forEach(randomiseMagnet);
+}
+
+shuffleButton.addEventListener("click", shuffleWords);
 --- /code ---
 
 </div>
 
 <h2 class="c-project-heading--task">Test</h2>
 
-Run your project and check that the title, controls, and empty board appear.
+Run your project, click Shuffle edge, and check that all the word tiles change.
 
 <div class="c-project-output">
   <img src="images/step_1_output.png" alt="Observed project output after this step.">

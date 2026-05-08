@@ -1,26 +1,9 @@
-// Word banks keep the project easy to retheme.
-const wordBanks = {
-  "Story spark": [
-    "I", "you", "we", "make", "found", "lost", "dream", "strange",
-    "bright", "tiny", "secret", "voice", "map", "door", "inside",
-    "outside", "maybe", "again", "because", "today"
-  ],
-  "Neon city": [
-    "neon", "street", "arcade", "bus", "tower", "window", "paint",
-    "signal", "midnight", "glow", "corner", "rooftop", "radio",
-    "skate", "market", "lantern", "mural", "rain", "echo", "spark"
-  ],
-  "Space quest": [
-    "orbit", "star", "rocket", "moon", "planet", "comet", "galaxy",
-    "alien", "launch", "signal", "crew", "mission", "silver",
-    "gravity", "solar", "cosmic", "dust", "beam", "future", "home"
-  ],
-  "Mystery mood": [
-    "quiet", "hidden", "wild", "hopeful", "brave", "gentle", "storm",
-    "whisper", "shadow", "wonder", "magic", "question", "sudden",
-    "golden", "fizz", "ancient", "new", "near", "far", "true"
-  ]
-};
+// The word list controls which words can appear on the magnet tiles.
+const words = [
+  "I", "you", "we", "make", "found", "lost", "dream", "strange",
+  "bright", "tiny", "secret", "voice", "map", "door", "inside",
+  "outside", "maybe", "again", "because", "today"
+];
 
 const edgeSpots = [
   { x: 3, y: 4 }, { x: 27, y: 4 }, { x: 51, y: 4 }, { right: 3, y: 4 },
@@ -33,26 +16,14 @@ const edgeSpots = [
 
 const board = document.querySelector("#board");
 const magnetLayer = document.querySelector("#magnet-layer");
-const bankSelect = document.querySelector("#bank-select");
 const shuffleButton = document.querySelector("#shuffle-button");
 const resetButton = document.querySelector("#reset-button");
 const wordForm = document.querySelector("#word-form");
 const newWordInput = document.querySelector("#new-word");
 
-let currentBank = Object.keys(wordBanks)[0];
 let magnets = [];
 
-function fillWordSetMenu() {
-  Object.keys(wordBanks).forEach((name) => {
-    const option = document.createElement("option");
-    option.value = name;
-    option.textContent = name;
-    bankSelect.append(option);
-  });
-}
-
 function randomWord() {
-  const words = wordBanks[currentBank];
   return words[Math.floor(Math.random() * words.length)];
 }
 
@@ -138,22 +109,17 @@ function makeMagnet(spot) {
   magnets.push(magnet);
 }
 
+function shuffleWords() {
+  magnets.forEach(randomiseMagnet);
+}
+
 function resetTiles() {
   magnetLayer.innerHTML = "";
   magnets = [];
   edgeSpots.forEach(makeMagnet);
 }
 
-function shuffleWords() {
-  magnets.forEach(randomiseMagnet);
-}
-
-fillWordSetMenu();
 resetTiles();
-
-bankSelect.addEventListener("change", () => {
-  currentBank = bankSelect.value;
-});
 
 shuffleButton.addEventListener("click", shuffleWords);
 resetButton.addEventListener("click", resetTiles);
@@ -166,8 +132,8 @@ wordForm.addEventListener("submit", (event) => {
     return;
   }
 
-  if (!wordBanks[currentBank].includes(newWord)) {
-    wordBanks[currentBank].push(newWord);
+  if (!words.includes(newWord)) {
+    words.push(newWord);
   }
 
   const magnet = magnets[Math.floor(Math.random() * magnets.length)];

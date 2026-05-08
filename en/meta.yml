@@ -1,20 +1,13 @@
 hero_image: images/banner.png
-description: Create a playful drag-and-drop word magnet board with editable word sets.
+description: Add shuffle and reset buttons to a playful drag-and-drop word magnet board.
 listed: false
 pdf: false
 title: 'Word Magnet Studio'
 landing: true
 steps:
-  - title: 'Build the magnet board'
-  - title: 'Style the dream scene'
-  - title: 'Make word magnets'
+  - title: 'Add a shuffle button'
+  - title: 'Add a reset button'
     completion:
       - 'engaged'
-  - title: 'Drag and change words'
-    completion:
-      - 'internal'
-  - title: 'Choose and add words'
-    completion:
-      - 'external'
   - title: 'Challenge'
     challenge: true

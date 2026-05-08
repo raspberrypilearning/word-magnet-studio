@@ -16,9 +16,12 @@ body {
 }
 
 button,
-input,
-select {
+input {
   font: inherit;
+}
+
+[hidden] {
+  display: none !important;
 }
 
 .app {
@@ -55,7 +58,6 @@ label {
   font-size: 0.9rem;
 }
 
-select,
 input,
 .toolbar button {
   min-height: 2.35rem;
@@ -64,13 +66,9 @@ input,
   background: #ffffff;
 }
 
-select,
-input {
-  padding: 0.35rem 0.5rem;
-}
-
 input {
   width: min(12rem, 52vw);
+  padding: 0.35rem 0.5rem;
 }
 
 .toolbar button {
