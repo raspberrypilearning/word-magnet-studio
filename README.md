@@ -1,18 +1,9 @@
-# default-project-template
+# Word Magnet Studio
 
-![default-project-template](banner.png)
+Create a playful word-magnet message board for young writers.
 
-Find the project online at [projects.raspberrypi.org/en/projects/default-project-template](https://projects.raspberrypi.org/en/projects/default-project-template)
+- Learner content lives in `en/`
+- Starter and complete code live in `en/code/`
+- Render-only screenshot targets live in `render_targets/`
 
-## Resources
-For project materials and solutions, see [en/resources](https://github.com/raspberrypilearning/default-project-template/tree/master/en/resources) and [en/solutions](https://github.com/raspberrypilearning/default-project-template/tree/master/en/solutions).
-
-## Contributing
-See [CONTRIBUTING.md](CONTRIBUTING.md)
-
-## Licence
-See [LICENCE.md](LICENCE.md)
-
-## Setting up a Crowdin project
-
-See [CROWDIN.md](CROWDIN.md).
+This project is authored as an HTML/CSS/JS project for the Raspberry Pi Foundation Code Editor.
