@@ -3,7 +3,7 @@
 Add a form so someone can put one of their own words onto a tile.
 
 ## Step 1
-Add a form to `index.html`. 
+Add a form to `index.html` after the control (nav) row.
 
 <div class="c-project-code">
 
@@ -12,14 +12,15 @@ Add a form to `index.html`.
 language: html
 filename: index.html
 line_numbers: true
-line_number_start: 18
-line_highlights: 1-5
+line_number_start: 16
+line_highlights: 17-21
 ---
-<form id="word-form" class="word-form">
-  <label for="new-word">Add word</label>
-  <input id="new-word" name="new-word" maxlength="18" autocomplete="off" placeholder="moonlit">
-  <button type="submit">Add</button>
-</form>
+      </nav>
+      <form id="word-form" class="word-form">
+        <label for="new-word">Add word</label>
+        <input id="new-word" name="new-word" maxlength="18" autocomplete="off" placeholder="moonlit">
+        <button type="submit">Add</button>
+      </form>
 --- /code ---
 
 </div>
@@ -33,8 +34,8 @@ Connect the form in `script.js`.
 language: javascript
 filename: script.js
 line_numbers: true
-line_number_start: 130
-line_highlights: 1-19
+line_number_start: 19
+line_highlights: 
 ---
 const wordForm = document.querySelector("#word-form");
 const newWordInput = document.querySelector("#new-word");

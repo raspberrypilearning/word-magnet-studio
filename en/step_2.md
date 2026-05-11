@@ -13,12 +13,12 @@ language: html
 filename: index.html
 line_numbers: true
 line_number_start: 13
-line_highlights: 3
+line_highlights: 15
 ---
-<nav class="control-row">
-  <button id="shuffle-button" type="button">Shuffle edge</button>
-  <button id="reset-button" type="button">Reset tiles</button>
-</nav>
+    <nav class="control-row">
+      <button id="shuffle-button" type="button">Shuffle edge</button>
+      <button id="reset-button" type="button">Reset tiles</button>
+    </nav>
 --- /code ---
 
 </div>
@@ -32,8 +32,8 @@ Add the reset code to `script.js`.
 language: javascript
 filename: script.js
 line_numbers: true
-line_number_start: 121
-line_highlights: 1-8
+line_number_start: 9
+line_highlights:
 ---
 const resetButton = document.querySelector("#reset-button");
 

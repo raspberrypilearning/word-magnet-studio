@@ -5,10 +5,14 @@ Create a button that changes every word magnet at once.
 <h2 class="c-project-heading--explainer">Make this change</h2>
 
 ## Step 1
-Run the code to see the unstyled page.
+Run the code to see the starter html page.
+
+The html has already been styled using a css file.
+
+Some javascript code is already in `starter.js`, so you can drag word tiles into the central space.
 
 ## Step 2
-Add a controls area with a `Shuffle edge` button below the title in `index.html`.
+In `index.html`, add a controls area with a `Shuffle edge` button below the title.
 
 <div class="c-project-code">
 
@@ -18,12 +22,11 @@ language: html
 filename: index.html
 line_numbers: true
 line_number_start: 10
-line_highlights: 14-17
+line_highlights: 13-15
 ---
 <main class="app">
   <header class="toolbar" aria-label="Word magnet controls">
     <h1>Word Magnet Studio</h1>
-    <!-- Add the controls area below the title. -->
     <nav class="control-row">
       <button id="shuffle-button" type="button">Shuffle edge</button>
     </nav>
@@ -32,7 +35,10 @@ line_highlights: 14-17
 </div>
 
 ## Step 3
-Add the code that runs the `randomiseMagnet` function runs when a magnet button is pressed.
+
+Open `script.js`.
+
+Add the code that runs the `randomiseMagnet` function when the button is pressed.
 
 <div class="c-project-code">
 
@@ -41,10 +47,9 @@ Add the code that runs the `randomiseMagnet` function runs when a magnet button 
 language: javascript
 filename: script.js
 line_numbers: true
-line_number_start: 113
-line_highlights: 1-8
+line_number_start: 1
+line_highlights:
 ---
-// This button changes every magnet at once.
 const shuffleButton = document.querySelector("#shuffle-button");
 
 function shuffleWords() {
