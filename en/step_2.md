@@ -21,9 +21,12 @@ line_highlights: 3
 </nav>
 --- /code ---
 
+</div>
+
 ## Step 2
 Add the reset code to `script.js`.
 
+<div class="c-project-code">
 --- code ---
 ---
 language: javascript

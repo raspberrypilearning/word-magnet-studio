@@ -22,9 +22,12 @@ line_highlights: 1-5
 </form>
 --- /code ---
 
+</div>
+
 ## Step 2
 Connect the form in `script.js`.
 
+<div class="c-project-code">
 --- code ---
 ---
 language: javascript

@@ -29,9 +29,12 @@ line_highlights: 4-7
     </nav>
   </header>
 --- /code ---
+</div>
 
 ## Step 3
 Add the code that runs the `randomiseMagnet` function runs when a magnet button is pressed.
+
+<div class="c-project-code">
 
 --- code ---
 ---
