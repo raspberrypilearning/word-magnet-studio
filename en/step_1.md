@@ -18,7 +18,7 @@ language: html
 filename: index.html
 line_numbers: true
 line_number_start: 10
-line_highlights: 4-7
+line_highlights: 14-17
 ---
 <main class="app">
   <header class="toolbar" aria-label="Word magnet controls">
